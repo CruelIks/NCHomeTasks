@@ -15,13 +15,13 @@ public class Application {
      *  Реализуйте метод, принимающий в качестве параметров список чисел и некоторое значение.
      *  Метод должен возвратить список чисел, которые больше этого значения
     */
-    public <T extends Number & Comparable> List<T> getNumbers(List<T> ourList, T value) {
+    public <T extends Number & Comparable<T>> List<T> getNumbers(List<T> ourList, T value) {
 
-        if (ourList == null | value == null | ourList.size() == 0){
+        if (ourList == null | value == null){
             throw new IllegalArgumentException("Bad argument's");
         }
 
-        List<T> result = new ArrayList<T>();
+        List<T> result = new ArrayList<>();
 
         for (T t : ourList) {
 
